@@ -1,0 +1,185 @@
+:root {
+  --bgColor: #0a0c10;
+  --secondary_bgColor: #111827;
+  --cardColor: #1f2937;
+
+  --accentColor: #3b82f6;
+  --accentHover: #60a5fa;
+  --textColor: #f9fafb;
+  --textMuted: #9ca3af;
+
+  --secondary_font: italic;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bgColor);
+  color: var(--textColor);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.navContainer {
+  background-color: var(--secondary_bgColor);
+  display: flex;
+  padding: 15px 20px;
+  width: 100%;
+
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+
+  border-radius: 0px 0px 20px 20px;
+
+  position: sticky;
+  top: 0px;
+
+  font-style: var(--secondary_font);
+  backdrop-filter: blur(10px);
+  background-color: rgba(17, 24, 39, 0.9);
+}
+
+.navContainer input {
+  padding: 12px 16px;
+  border-radius: 40px;
+
+  width: 50%;
+  max-width: 400px;
+
+  background-color: var(--bgColor);
+  color: white;
+
+  border: 1px solid var(--accentColor);
+  font-size: 1rem;
+}
+
+.navContainer input:focus {
+  outline: none;
+  box-shadow: 0 0 12px var(--accentColor);
+  border-color: var(--accentHover);
+}
+
+/* For all btns this should work */
+button {
+  background: linear-gradient(135deg, var(--accentColor), #1e40af);
+  color: white;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 40px;
+  padding: 10px 20px;
+  margin-left: 5px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, var(--accentHover), var(--accentColor));
+  border: none;
+
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.movieContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  justify-items: center;
+  align-items: start;
+
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: var(--cardColor);
+  margin: 0px;
+
+  width: 100%;
+  max-width: 280px;
+  border-radius: 20px;
+
+  justify-items: center;
+  text-align: center;
+  padding-bottom: 20px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+  aspect-ratio: 2 / 3;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin: 12px 12px 4px;
+  color: var(--textColor);
+}
+
+.card p {
+  color: var(--textMuted);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.card button {
+  margin: 8px 0px 0px;
+  width: 80%;
+  background: linear-gradient(135deg, #2dd4bf, #0d9488);
+}
+
+.card button:hover {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+  box-shadow: 0 8px 20px rgba(45, 212, 191, 0.4);
+}
+
+/* Responsive grid */
+@media (max-width: 1024px) {
+  .movieContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .movieContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .navContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .navContainer input {
+    width: 90%;
+  }
+  
+  button {
+    width: auto;
+    padding: 8px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movieContainer {
+    grid-template-columns: 1fr;
+  }
+}

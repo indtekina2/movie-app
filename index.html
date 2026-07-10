@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Collection</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- This is the search bar -->
+    <section class="navContainer">
+        <input type="text" placeholder="Search your movies" id="input">
+        <button id="search">Search</button>
+    </section>
+
+    <!-- Where I will show the searched result from the API -->
+    <section id="response" class="movieContainer response">
+        <div class="card" data-id="imdbID">
+            <img src="https://m.media-amazon.com/images/M/MV5BMmU5NGJlMzAtMGNmOC00YjJjLTgyMzUtNjAyYmE4Njg5YWMyXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+                alt="">
+            <h2>"The Batman"</h2>
+            <p>[movie] 2022</p>
+            <br>
+            <button class="later">Watch later</button>
+        </div>
+    </section>
+
+    <hr style="margin-top: 8px">
+
+    <!-- This is where I will show all the movies marked as seen from local storate -->
+    <section id="seen" class="movieContainer seen">
+        <div class="card" data-id="imdbID">
+            <img src="https://m.media-amazon.com/images/M/MV5BMmU5NGJlMzAtMGNmOC00YjJjLTgyMzUtNjAyYmE4Njg5YWMyXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+                alt="">
+            <h2>"The Batman"</h2>
+            <p>[movie] 2022</p>
+            <button>Watched</button>
+        </div>
+    </section>
+    
+    <!-- all the js files -->
+    <script src="js/external.js"></script>
+    <script src="js/Api.js"></script>
+    <script src="js/local.js"></script>
+</body>
+</html>
